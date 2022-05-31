@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from lists.models import Item
 
@@ -13,4 +13,4 @@ def home_page(request):
 #        'new_item_text': new_item_text,
 #    })
     items = Item.objects.all()
-     return render(request, 'home.html',{'items':items})
+    return render(request, 'home.html',{'items':items})
